@@ -2,6 +2,14 @@
 
 
 {% block content %}
-    <h1>This is the home</h1>
+{% for i in posts %}
+    <div class="jumbotron">
+        <h1 class="display-4">{{i.title}}</h1>
+        <p class="lead">by : {{i.author}}</p>
+        <hr class="my-4">
+        <p>{{i.text}}</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </div>
+{% endfor %}
 {% endblock content %}
     
