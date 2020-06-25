@@ -33,7 +33,7 @@
 
                 {% if user.is_authenticated %}
                     <li class="nav-item" >
-                        <a class="nav-link"href="{% url 'login' %}">Hi {{user.author}}</a>
+                        <a class="nav-link"href="{% url 'profile' %}">Hi,{{user.username}}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'logout' %}">Logout</a>
