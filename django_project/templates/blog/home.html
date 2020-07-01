@@ -4,7 +4,8 @@
 {% block content %}
 {% for i in posts %}
     <div class="jumbotron">
-        <h1 class="display-4">{{i.title}}</h1>
+
+        <h1 class="display-4"><img  class="rounded-circle article-img" style="width: 70px; height:70px" src="{{ i.author.profile.image.url }}" alt=""> {{i.title}}</h1>
         <p class="lead">by : {{i.author}}</p>
         <p>{{i.date_posted|date:"F, d, Y"}}</p>
         <hr class="my-4">
