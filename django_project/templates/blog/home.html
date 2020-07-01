@@ -5,12 +5,12 @@
 {% for i in posts %}
     <div class="jumbotron">
 
-        <h1 class="display-4"><img  class="rounded-circle article-img" style="width: 70px; height:70px" src="{{ i.author.profile.image.url }}" alt=""> {{i.title}}</h1>
+        <h3><img  class="rounded-circle article-img" style="width: 70px; height:70px" src="{{ i.author.profile.image.url }}" alt=""> <a href="{% url 'post-detail' i.id %}"> {{i.title}}</a></h3>
         <p class="lead">by : {{i.author}}</p>
         <p>{{i.date_posted|date:"F, d, Y"}}</p>
         <hr class="my-4">
         <p>{{i.text}}</p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+       <!-- <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> -->
     </div>
 {% endfor %}
 {% endblock content %}
