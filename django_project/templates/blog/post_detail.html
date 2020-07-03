@@ -4,9 +4,9 @@
 {% block content %}
 <div class="jumbotron">
 
-    <h3><img class="rounded-circle article-img" style="width: 70px; height:70px" src="{{ i.author.profile.image.url }}"
+    <h3><img class="rounded-circle article-img" style="width: 70px; height:70px" src="{{ object.author.profile.image.url }}"
             alt=""> {{object.title}}</h3>
-    <p class="lead">by : {{object.author}}</p>
+            <p class="lead">by : <a href="{% url 'user-posts' object.author.username %}"> {{object.author}}</a></p>
     <p>{{object.date_posted|date:"F, d, Y"}}</p>
     {% if object.author == user %}
         <a class="btn btn-secondary btn-mt-1 mb-1" href="{% url 'post-update' object.id %}">Update</a>

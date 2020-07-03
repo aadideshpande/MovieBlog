@@ -2,12 +2,13 @@
 
 
 {% block content %}
-{% for i in posts %}
+<h1 class="mb-3">Posts by {{view.kwargs.username}} ({{page_obj.paginator.count}})</h1>
+{% for i in page_obj %}
 <div class="jumbotron">
 
     <h3><img class="rounded-circle article-img" style="width: 70px; height:70px" src="{{ i.author.profile.image.url }}"
             alt=""> <a href="{% url 'post-detail' i.id %}"> {{i.title}}</a></h3>
-    <p class="lead">by : <a href="{% url 'user-posts' i.author.username %}"> {{i.author}}</a></p>
+            <p class="lead">by : <a href="{% url 'user-posts' i.author.username %}"> {{i.author}}</a></p>
     <p>{{i.date_posted|date:"F, d, Y"}}</p>
     <hr class="my-4">
     <p>{{i.text}}</p>
